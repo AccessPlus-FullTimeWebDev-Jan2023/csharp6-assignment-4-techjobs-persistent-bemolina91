@@ -61,6 +61,26 @@ namespace TechJobs6Persistent.Controllers
             return View(theEmployer);
         }
 
+        public IActionResult Delete()
+        {
+            ViewBag.employers = context.Employers.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int[] employerIds)
+        {
+            foreach (int employerId in employerIds)
+            {
+                Employer theEmployer = context.Employers.Find(employerId);
+                context.Employers.Remove(theEmployer);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/Employer");
+        }
     }
 }
 

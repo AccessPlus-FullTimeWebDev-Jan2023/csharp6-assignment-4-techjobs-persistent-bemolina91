@@ -6,10 +6,10 @@ namespace TechJobs6Persistent.ViewModels
 {
 	public class AddEmployerViewModel
 	{
-		[Required(ErrorMessage = "Name is required")]
+		[Required(ErrorMessage = "Name required")]
         public string? Name { get; set; }
 
-		[Required(ErrorMessage = "Location is required")]
+		[Required(ErrorMessage = "Location required")]
         public string? Location { get; set; }
 	}
 }

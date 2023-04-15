@@ -1,0 +1,18 @@
+﻿
+
+<h1>Delete Employer</h1>
+
+<form method="post">
+    @foreach (var employer in ViewBag.employers)
+    {
+        <div class="form-group">
+            <label>
+                <span>@employer.Name</span>
+                <input type="checkbox" name="employerIds" value="@employer.Id" class="form-control">
+            </label>
+        </div>
+    }
+
+    <input type="submit" value="Delete Selected Employers" class="btn btn-danger">
+
+</form>
